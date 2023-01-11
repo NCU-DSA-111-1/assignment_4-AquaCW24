@@ -6,8 +6,7 @@
 #include <string.h>
 #include <time.h>
 
-struct card
-{
+struct card{
     char *face;
     char *suit;
 };
@@ -15,8 +14,10 @@ typedef struct card Card;
 
 struct poker21
 {
-    int card_n; // Card number
-    int sum;    // Total cards' credit
+    int card_n;     // Card number
+    int sum;        // Total cards' credit
+    float stake;      // player's stake
+    float purse ;     // player's purse
     Card sub[6];
 };
 typedef struct poker21 Poker21;
