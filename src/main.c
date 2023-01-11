@@ -26,7 +26,7 @@ void print_station(int n, int player_t, float over21, float under21){
     printf("|\t\t\t\t\t\t\t\t\t|\n");
     printf("| You have used %d-set Poker cards.\t\t\t\t\t|\n", n);
     printf("| There are %d players.\t\t\t\t\t\t\t|\n", player_t+1);
-    printf("| Betting odds under 21 is %2.2f.\t\t\t\t\t\t|\n", under21);
+    printf("| Betting odds under 21 is %2.2f.\t\t\t\t\t|\n", under21);
     printf("| Betting odds over 21 is %2.2f.\t\t\t\t\t\t|\n", over21);
     printf("=========================================================================\n\n");
     // printf("=========================================================================\n");
@@ -201,6 +201,7 @@ int main(void){
             {
                 restart = 0;
                 printf("\nGame Over!!! Someone losts a lot of money in gamble!!!\n\n");
+                printf("\t\t\t\t\033[34m Wallet \033[0m\n");
 
                 for (int i = 0; i < player_n+1; i++){
                     printf("\tPlayer %d,now the money in your wallet is : $%2.2f \n", i, player[i].purse);
@@ -215,6 +216,7 @@ int main(void){
         while (YN == 'n' | YN == 'N'){
             restart = 0;
             printf("\nGame Over!!!\n\n");
+            printf("\t\t\t\t\033[34m Wallet \033[0m\n");
 
             for (int i = 0; i < player_n+1; i++){
                 printf("\tPlayer %d,now the money in your wallet is : $%2.2f \n", i, player[i].purse);
