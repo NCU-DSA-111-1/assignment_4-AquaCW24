@@ -197,7 +197,7 @@ int main(void){
         //If someone runs out of money, the game will be forced to end
         for (int i = 0; i <= player_n; i++)
         {
-            if (player[i].purse < 0)
+            if (player[i].purse <= 0)
             {
                 restart = 0;
                 printf("\nGame Over!!! Someone losts a lot of money in gamble!!!\n\n");
