@@ -66,7 +66,7 @@ int main(void){
         printf("\t\t\t\t\033[34m Wallet \033[0m\n");
         if (flag == 1){
             
-            for (int i = 0; i < player_n+1; i++){
+            for(int i = 0; i < player_n + 1; i++){
                 printf("\tPlayer %d,please enter how many money do you have: ",i);
                 scanf("%f", &(player[i].purse));
                 //錢包的錢不能為負數
@@ -86,7 +86,7 @@ int main(void){
         printf("=========================================================================\n");
         // bet money
         printf("\t\t\t\t\033[34m Lay A Bet \033[0m\n");
-        for (int i = 0; i <= player_n; i++)
+        for(int i = 0; i <= player_n; i++)
         {
             player[i].card_n = 0;
             player[i].sum = 0;
@@ -178,8 +178,8 @@ int main(void){
                 player[0].purse = player[0].purse + player[i].stake*betting_odds_under21;
 
             }
-            //玩家點數大於21點且莊家點數小於21點，或玩家點數小於莊家點數，輸以及賠錢
-            else if ((player[i].sum > 21 & player[0].sum < 21) | (player[i].sum < player[0].sum))
+            //玩家點數大於21點，或玩家點數小於莊家點數，輸以及賠錢
+            else if ((player[i].sum > 21) | (player[i].sum < player[0].sum))
             {
                 printf("Player #%d is LOSS! Player #%d losses money: $%2.2f !\n", i, i, player[i].stake*betting_odds_over21);
                 // printf("Player #%d losses money: $%d !\n", i, player[i].stake*betting_odds_under21);
