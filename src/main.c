@@ -206,7 +206,7 @@ int main(void){
                 for (int i = 0; i < player_n+1; i++){
                     printf("\tPlayer %d,now the money in your wallet is : $%2.2f \n", i, player[i].purse);
                 }
-                exit(1);
+                exit(0);
             }
             
         }
@@ -221,7 +221,7 @@ int main(void){
             for (int i = 0; i < player_n+1; i++){
                 printf("\tPlayer %d,now the money in your wallet is : $%2.2f \n", i, player[i].purse);
             }
-            exit(1);
+            exit(0);
         }
         // free memory
         free(deck);
