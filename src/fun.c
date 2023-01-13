@@ -1,7 +1,31 @@
-#include "poker.h"
+#include "../inc/poker.h"
 
-static char *FACE[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"};
-// static char *SUIT[] = {"H", "D", "C", "S"};a
+// char *FACE[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "T", "J", "Q", "K"};
+// static char *SUIT[] = {"H", "D", "C", "S"};
+
+void print_rule(void){
+
+    printf("\n\033[37m============================================================================================================\033[0m\n");
+    printf("\033[37m|\033[0m\t\t\t\t \033[34m Welcome to the Poker-21 game! \033[0m\t\t\t\t\t\033[37m   |\033[0m\n");
+    printf("\033[37m|\033[0m     21點是一種經典的撲克牌遊戲，每局的目的是讓手中的牌點數加起來等於或接近21點，但不能超過21點。         \033[37m|\033[0m\n");
+    printf("\033[37m|\033[0m     遊戲開始後，玩家先行動，可以選擇要牌或停牌。若玩家選擇要牌，莊家就會從牌堆中給玩家一張牌             \033[37m|\033[0m\n");
+    printf("\033[37m|\033[0m     ，玩家的牌點數會隨之增加。玩家可以一直要牌直到他們的牌點數等於或超過21點，此時玩家爆牌了，失去本局。 \033[37m|\033[0m\n");
+    printf("\033[37m|\033[0m     最後，玩家和莊家的牌點數會被比較，如果玩家的牌點數比莊家高，玩家贏得本局；                           \033[37m|\033[0m\n");
+    printf("\033[37m|\033[0m     如果玩家的牌點數等於莊家的牌點數，則是和局；否則莊家贏。                                             \033[37m|\033[0m\n");
+    printf("\033[37m============================================================================================================\033[0m\n\n");
+}
+
+void print_station(int n, int player_t, float over21, float under21){
+
+    printf("\n=========================================================================\n");
+    printf("|\t\t\t\t \033[34m Information\033[0m \t\t\t\t|\n");
+    printf("|\t\t\t\t\t\t\t\t\t|\n");
+    printf("| You have used %d-set Poker cards.\t\t\t\t\t|\n", n);
+    printf("| There are %d players.\t\t\t\t\t\t\t|\n", player_t+1);
+    printf("| Betting odds under 21 is %2.2f.\t\t\t\t\t|\n", under21);
+    printf("| Betting odds over 21 is %2.2f.\t\t\t\t\t\t|\n", over21);
+    printf("=========================================================================\n\n");
+}
 
 void fillDeck_n(Card *deck, char *face[], char *suit[], int n)
 {

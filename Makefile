@@ -21,6 +21,9 @@ compile:
 copy: compile
 	@mv $(notdir $(SRC_LIST:.c=.o)) $(OBJ_DIR)/
 
+run:
+	./bin/main
+
 $(PROG_NAME): copy
 	$(LD) $(OBJ_LIST) -o $(BIN_DIR)/$@
 
